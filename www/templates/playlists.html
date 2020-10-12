@@ -1,0 +1,26 @@
+<ion-view view-title="DreamApp" style="background-image: url('/img/background.jpg'); background-size: cover;" >
+	<ion-content >
+
+		<div class="list list-inset">
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" placeholder="Rüya Ara" ng-model='ruya' ng-change='bul(ruya)'>
+			</label>
+		</div>
+
+		
+		<div ng-if='!ruya'>
+			<h1 style="color: white; padding-top:55px; text-align: center;">Interpretation <br> of <br> Dreams</h1>
+			<img style="padding-left: 120px;" src="/img/moon.png">
+		</div>
+		
+
+
+		<ion-list ng-if='ruya'>
+			<ion-item ng-repeat="ruya in ruyalar" href="#/app/playlists/{{$index}}">
+				{{ruya.adi}}
+			</ion-item>
+		</ion-list>
+
+	</ion-content>
+</ion-view>
